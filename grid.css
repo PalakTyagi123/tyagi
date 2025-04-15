@@ -1,0 +1,11 @@
+.container{
+    display:grid;
+    grid-template-columns: auto auto auto;
+    background-color:aquamarine;
+    padding: 30px;
+    gap: 40px;
+}
+.grid{
+    text-align:right;
+    background-color:red;
+}

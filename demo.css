@@ -1,0 +1,12 @@
+*{
+    background-color:aqua;
+}
+h1{
+    color:darkcyan;
+    width: 12px;
+    font-family:'Courier New', Courier, monospace;
+}
+.firstDiv ,p{
+    color:yellow;
+    
+}
