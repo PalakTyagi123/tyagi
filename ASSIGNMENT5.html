@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    input, label {
+      display: block;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Registration Form</h2>
+
+  <form id="registrationForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" required>
+
+    <label for="age">Age:</label>
+    <input type="number" id="age" min="0" required>
+
+    <button type="submit">Register</button>
+  </form>
+
+  <script>
+     function showData(){
+     
+      var name = document.getElementById('name').value;
+      var email = document.getElementById('email').value;
+      var password = document.getElementById('password').value;
+      var age = document.getElementById('age').value;
+
+      
+      alert("Registration Details:\n\n" +
+            "Name: " + name + "\n" +
+            "Email: " + email + "\n" +
+            "Password: " + password + "\n" +
+            "Age: " + age);
+    };
+  </script>
+
+</body>
+</html>

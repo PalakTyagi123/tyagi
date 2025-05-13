@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Resume Generator</title>
+</head>
+<body>
+
+    <h2>Resume Generator</h2>
+
+    <label>Name: </label><input type="text" id="name"><br><br>
+    <label>Email: </label><input type="text" id="email"><br><br>
+    <label>Phone: </label><input type="text" id="phone"><br><br>
+    <label>Education: </label><input type="text" id="education"><br><br>
+    <label>Skills (comma separated): </label><input type="text" id="skills"><br><br>
+
+    <button onclick="generateResume()">Generate Resume</button>
+
+    <hr>
+
+    <div id="resume"></div>
+
+    <script>
+        function generateResume() {
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var phone = document.getElementById('phone').value;
+            var education = document.getElementById('education').value;
+            var skills = document.getElementById('skills').value.split(',');
+
+            var resumeHTML = "<h2>" + name + "</h2>";
+            resumeHTML += "<p><strong>Email:</strong> " + email + "</p>";
+            resumeHTML += "<p><strong>Phone:</strong> " + phone + "</p>";
+            resumeHTML += "<p><strong>Education:</strong> " + education + "</p>";
+            resumeHTML += "<p><strong>Skills:</strong></p><ul>";
+
+            for (var i = 0; i < skills.length; i++) {
+                resumeHTML += "<li>" + skills[i].trim() + "</li>";
+            }
+
+            resumeHTML += "</ul>";
+
+            document.getElementById('resume').innerHTML = resumeHTML;
+        }
+    </script>
+
+</body>
+</html>

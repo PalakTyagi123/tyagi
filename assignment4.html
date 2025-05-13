@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple ID Card</title>
+</head>
+<body>
+
+  <h3>ID Card Form</h3>
+  <form id="idForm">
+    Name: <input type="text" id="name"><br><br>
+    Course: <input type="text" id="course"><br><br>
+    Section: <input type="text" id="section"><br><br>
+    Emergency Contact No: <input type="text" id="contact"><br><br>
+    Upload Photo: <input type="file" id="photo" accept="image/*"><br><br>
+    <button type="submit">Generate</button>
+  </form>
+  <h3>Your ID Card</h3>
+  <div id="idCard" style="display:none; border:1px solid black; padding:10px; width:250px; text-align:center;">
+    <img id="cardPhoto" src="" alt="Photo" style="width:100px; height:100px; object-fit:cover; border-radius:50%;"><br><br>
+    <p><b>Name:</b> <span id="cardName"></span></p>
+    <p><b>Course:</b> <span id="cardCourse"></span></p>
+    <p><b>Section:</b> <span id="cardSection"></span></p>
+    <p><b>Emergency Contact:</b> <span id="cardContact"></span></p>
+  </div>
+  <script>
+    document.getElementById('idForm').addEventListener('submit', function(e) {
+      e.preventDefault();43
+    
+      document.getElementById('cardName').textContent = document.getElementById('name').value;
+      document.getElementById('cardCourse').textContent = document.getElementById('course').value;
+      document.getElementById('cardSection').textContent = document.getElementById('section').value;
+      document.getElementById('cardContact').textContent = document.getElementById('contact').value;
+
+     
+      const photoInput = document.getElementById('photo');
+      const reader = new FileReader();
+      reader.onload = function(event) {
+        document.getElementById('cardPhoto').src = event.target.result;
+        document.getElementById('idCard').style.display = 'block';
+      };
+      
+      if (photoInput.files[0]) {
+        reader.readAsDataURL(photoInput.files[0]);
+      } else {
+       
+        document.getElementById('cardPhoto').src = '';
+        document.getElementById('idCard').style.display = 'block';
+      }
+    });
+  </script>
+
+</body>
+</html>

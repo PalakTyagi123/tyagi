@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Calculator</title>
+    <style>
+      body {
+        font-family: Arial;
+        text-align: center;
+        padding: 50px;
+        background-color: blueviolet;
+        color:black;
+
+      }
+      input{
+        background-color: burlywood;
+      }
+     
+      button {
+        padding: 10px;
+        margin: 5px;
+        font-size: 16px;
+        background-color: brown;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Simple Calculator</h2>
+
+    <input type="number" id="num1" placeholder="First number" />
+    <input type="number" id="num2" placeholder="Second number" /><br />
+
+    <button onclick="calculate('+')">+</button>
+    <button onclick="calculate('-')">-</button>
+    <button onclick="calculate('*')">*</button>
+    <button onclick="calculate('/')">/</button>
+
+    <h3 id="result"></h3>
+
+    <script>
+      function calculate(op) {
+        var a = parseFloat(document.getElementById("num1").value);
+        var b = parseFloat(document.getElementById("num2").value);
+        var res;
+
+        if (op === "+") res = a + b;
+        else if (op === "-") res = a - b;
+        else if (op === "*") res = a * b;
+        else if (op === "/") res = b !== 0 ? a / b : "Error: Divide by 0";
+
+        document.getElementById("result").innerText = "Result: " + res;
+      }
+    </script>
+  </body>
+</html>
