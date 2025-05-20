@@ -34,3 +34,17 @@
 
 // }
 // t();
+
+
+const car = {type:"Fiat", model:"500", color:"white"};
+console.log(car);
+const ob2=new Object();
+console.log(ob2);
+ob2.Address="ABESEC";
+ob2.Contact="4235452454";
+console.log(ob2.Address);
+console.log(ob2.Contact);
+const ob1={Name:"RAM",City:"DELHI",Age:40,fullAddress:function(){console.log("function is object")}}
+console.log(ob1.fullAddress());
+ob1.Name;
+console.log(ob1.Name);
